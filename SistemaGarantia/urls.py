@@ -24,9 +24,8 @@ urlpatterns = [
     path('productos', views.productos, name="Productos"),
     path('contacto', views.contacto, name="Contacto"),
     path('reclamos', views.reclamos, name="Reclamos"),
-
-
-
     
 
 ]
+
+

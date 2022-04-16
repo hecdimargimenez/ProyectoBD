@@ -4,16 +4,16 @@ from django.shortcuts import HttpResponse
 # Create your views here.
 
 def home(request):
-    return HttpResponse("Home")
+    return render(request, "SistemaGarantia/home.html")
 
 def nosotros(request):
-    return HttpResponse("Nosotros")
+    return render(request, "SistemaGarantia/nosotros.html")
 
 def productos(request):
-    return HttpResponse("Productos")
+    return render(request, "SistemaGarantia/productos.html")
 
 def contacto(request):
-    return HttpResponse("Contacto")
+    return render(request, "SistemaGarantia/contacto.html")
 
 def reclamos(request):
-    return HttpResponse("Reclamos")
+    return render(request, "SistemaGarantia/reclamos.html")
