@@ -1,60 +1,69 @@
-{% extends "SistemaGarantia/base.html" %}
+{% extends "SistemaGarantia/base.html" %} {% load static %} {% block content %}
+<!-- Heading -->
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <img
+        class="intro-img img-fluid mb-3 mb-lg-0 rounded"
+        src="{% static 'SistemaGarantia/img/principal.jpg' %}"
+        alt=""
+      />
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4">
+          <span class="section-heading-upper">Calidad y comodidad</span>
+          <span class="section-heading-lower"
+            >Hacemos de tu casa un hogar
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="3rem"
+              height="3rem"
+              fill="currentColor"
+              class="bi bi-house-heart-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L8 2.207l6.646 6.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Zm0 5.189c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.691 0-5.018Z"
+              />
+            </svg>
+          </span>
+        </h2>
+        <p class="mb-3">
+          Contamos con una amplia gama de productos y las mejores marcas con
+          prestigio a nivel internacional. Ofrecemos disponibilidad en la
+          mayoría de los equipos, así como el respaldo y garantía de fábrica en
+          todos nuestros productos.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% load static %}
-
-
-{% block content %}
-    <!-- Heading -->
-    <section class="page-section clearfix">
-      <div class="container">
-        <div class="intro">
-          <img
-            class="intro-img img-fluid mb-3 mb-lg-0 rounded"
-            src="{% static 'SistemaGarantia/img/principal.jpg' %}"
-            alt=""
-          />
-          <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-            <h2 class="section-heading mb-4">
-              <span class="section-heading-upper">Calidad y comodidad</span>
-              <span class="section-heading-lower"
-                >Hacemos de tu casa un hogar <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-house-heart-fill" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L8 2.207l6.646 6.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
-                  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Zm0 5.189c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.691 0-5.018Z"/>
-                </svg> </span
-              >
-            </h2>
-            <p class="mb-3">
-              Contamos con una amplia gama de productos y las mejores marcas con
-              prestigio a nivel internacional. Ofrecemos disponibilidad en la
-              mayoría de los equipos, así como el respaldo y garantía de fábrica
-              en todos nuestros productos.
-            </p>
-          </div>
+<!-- Message -->
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper"
+              >Confiabilidad y Experiencia</span
+            >
+            <span class="section-heading-lower">Garantizada</span>
+          </h2>
+          <p class="mb-0">
+            Con más de una década de experiencia, nos comprometemos al 100% con
+            nuestros clientes, intentando superar las expectativas en cada
+            compra.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Message -->
-    <section class="page-section cta">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <div class="cta-inner text-center rounded">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper"
-                  >Confiabilidad y Experiencia</span
-                >
-                <span class="section-heading-lower">Garantizada</span>
-              </h2>
-              <p class="mb-0">
-                Con más de una década de experiencia, nos comprometemos al 100%
-                con nuestros clientes, intentando superar las expectativas en
-                cada compra.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-   {% endblock %}
+{% endblock %}

@@ -311,6 +311,86 @@ ul.errorlist{
   color: red;
 }
 
+/* About Us Section
+--------------------------------*/
+#titulo{
+  font-family: 'Oswald', sans-serif;
+  color:#1C658C;
+  text-shadow: 1px 1px 1px black ;
+}
+#about {
+  background: #fff;
+  padding: 80px 0;
+}
+#about .about-container .background {
+  min-height: 300px;
+  background: url(../img/about-img.webp) center top no-repeat;
+  margin-bottom: 10px;
+}
+#about .about-container .content {
+  background: #fff;
+}
+#about .about-container .title {
+  color: #1C658C;
+  font-weight: 700;
+  font-size: 32px;
+  font-family: 'Oswald', sans-serif;
+}
+@media (max-width: 768px) {
+  #about .about-container .title {
+    padding-top: 15px;
+  }
+}
+#about .about-container p {
+  line-height: 26px;
+}
+#about .about-container p:last-child {
+  margin-bottom: 0;
+}
+#about .about-container .icon-box {
+  background: #398AB9;
+  background-size: cover;
+  padding: 0 0 30px 0;
+}
+#about .about-container .icon-box .icon {
+  float: left;
+  background: #fff;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+  border: 3px solid gray;
+}
+#about .about-container .icon-box .icon i {
+  color: #1C658C;
+  font-size: 24px;
+  line-height: 0;
+}
+#about .about-container .icon-box .title {
+  margin-left: 80px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+}
+#about .about-container .icon-box .title a {
+  color: #111;
+}
+#about .about-container .icon-box .description {
+  margin-left: 80px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+
+/* Services Section
+--------------------------------*/
+
 /*<svg xmlns="http://www.w3.org/2000/svg" width="5rem" height="5rem" fill="currentColor" class="bi bi-house-heart-fill" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L8 2.207l6.646 6.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
         <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Zm0 5.189c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.691 0-5.018Z"/>
