@@ -13,7 +13,7 @@ class Cliente(models.Model):
 
 
 class Factura(models.Model):
-    numero_fact=models.CharField(max_length=30, primary_key=True)
+    numero_fact=models.AutoField(primary_key=True)
     cliente_ced=models.ForeignKey(Cliente, null=False, blank=False, on_delete=models.CASCADE)
     fecha_emision=models.DateTimeField(auto_now_add=True)
     forma_pago=models.CharField(max_length=255)
@@ -22,7 +22,7 @@ class Factura(models.Model):
 
 
 class Garantia(models.Model):
-    numero_garan=models.CharField(max_length=30, primary_key=True)
+    numero_garan=models.AutoField(primary_key=True)
     factura_num=models.ForeignKey(Factura, null=False, blank=False, on_delete=models.CASCADE)
     fecha_inicio=models.DateField()
     fecha_venc=models.DateField()
@@ -30,13 +30,13 @@ class Garantia(models.Model):
 
 
 class Departamento(models.Model):
-    codigo_dpto=models.CharField(max_length=30, primary_key=True)
+    codigo_dpto=models.AutoField(primary_key=True)
     nombre_dpto=models.CharField(max_length=255)
     estatus=models.BooleanField(default=True)
 
 
 class Ticket(models.Model):
-    codigo_tick=models.CharField(max_length=30, primary_key=True)
+    codigo_tick=models.AutoField(primary_key=True)
     garantia_num=models.ForeignKey(Garantia, null=False, blank=False, on_delete=models.CASCADE)
     departamento_cod=models.ForeignKey(Departamento, null=False, blank=False, on_delete=models.CASCADE)
     fecha_creac=models.DateTimeField(auto_now_add=True)
@@ -49,13 +49,13 @@ class Ticket(models.Model):
 
 
 class Modelo(models.Model):
-   codigo_mdlo=models.CharField(max_length=30, primary_key=True)
+   codigo_mdlo=models.AutoField(primary_key=True)
    descrip_mdlo=models.CharField(max_length=255)
    estatus=models.BooleanField(default=True)
 
 
 class Producto(models.Model):
-    codigo_prod=models.CharField(max_length=30, primary_key=True)
+    codigo_prod=models.AutoField(primary_key=True)
     modelo_cod=models.ForeignKey(Modelo, null=False, blank=False, on_delete=models.CASCADE)  
     marca=models.CharField(max_length=255)   
     nombre_prod=models.CharField(max_length=255)
@@ -67,7 +67,7 @@ class Producto(models.Model):
 
 
 class Detalle(models.Model):
-    codigo_detal=models.CharField(max_length=30, primary_key=True)
+    codigo_detal=models.AutoField(primary_key=True)
     factura_num=models.ForeignKey(Factura, null=False, blank=False, on_delete=models.CASCADE)
     producto_cod=models.ForeignKey(Producto, null=False, blank=False, on_delete=models.CASCADE)
     precio=models.IntegerField()
