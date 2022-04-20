@@ -8,6 +8,8 @@ class TicketAdmin(admin.ModelAdmin):
 class FacturaAdmin(admin.ModelAdmin):
     readonly_fields=('fecha_emision',)
 
+class ProductoAdmin(admin.ModelAdmin):
+    readonly_fields=('codigo_prod',)
 # Register your models here.
 
 admin.site.register(Cliente)
@@ -16,6 +18,6 @@ admin.site.register(Garantia)
 admin.site.register(Departamento)
 admin.site.register(Ticket, TicketAdmin)
 admin.site.register(Modelo)
-admin.site.register(Producto)
+admin.site.register(Producto, ProductoAdmin)
 admin.site.register(Detalle)
 

@@ -60,6 +60,7 @@ class Producto(models.Model):
     marca=models.CharField(max_length=255)   
     nombre_prod=models.CharField(max_length=255)
     descrip_prod=models.CharField(max_length=255)
+    img_prod=models.ImageField(upload_to='productos', null=True, blank=True)#Carpeta para guardar las imagenes de los productos
     existencia=models.IntegerField()
     costo=models.IntegerField()
     meses_garan=models.IntegerField()
