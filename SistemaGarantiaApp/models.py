@@ -54,13 +54,19 @@ class Modelo(models.Model):
    estatus=models.BooleanField(default=True)
 
 
+class Marca(models.Model):
+   codigo_mar=models.AutoField(primary_key=True)
+   nombre_mar=models.CharField(max_length=255)
+   estatus=models.BooleanField(default=True)
+
+
 class Producto(models.Model):
     codigo_prod=models.AutoField(primary_key=True)
     modelo_cod=models.ForeignKey(Modelo, null=False, blank=False, on_delete=models.CASCADE)  
-    marca=models.CharField(max_length=255)   
+    marca_cod=models.ForeignKey(Marca, null=True, blank=True, on_delete=models.CASCADE)
     nombre_prod=models.CharField(max_length=255)
     descrip_prod=models.CharField(max_length=255)
-    img_prod=models.ImageField(upload_to='productos', null=True, blank=True)#Carpeta para guardar las imagenes de los productos
+    img_prod=models.ImageField(upload_to='productos',null=True, blank=True)#Carpeta para guardar las imagenes de los productos
     existencia=models.IntegerField()
     costo=models.IntegerField()
     meses_garan=models.IntegerField()
