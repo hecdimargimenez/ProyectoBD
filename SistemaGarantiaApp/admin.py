@@ -18,6 +18,7 @@ admin.site.register(Garantia)
 admin.site.register(Departamento)
 admin.site.register(Ticket, TicketAdmin)
 admin.site.register(Modelo)
+admin.site.register(Marca)
 admin.site.register(Producto, ProductoAdmin)
 admin.site.register(Detalle)
 

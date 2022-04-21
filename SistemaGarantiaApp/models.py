@@ -11,6 +11,10 @@ class Cliente(models.Model):
     telefono=models.CharField(max_length=30)
     estatus=models.BooleanField(default=True)
 
+    def __str__(self):
+        txt = "{0}, {1} {2}"
+        return txt.format(self.cedula,self.nombre_clte,self.apellido_clte)
+
 
 class Factura(models.Model):
     numero_fact=models.AutoField(primary_key=True)
@@ -20,6 +24,9 @@ class Factura(models.Model):
     monto_total=models.IntegerField()
     estatus=models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.numero_fact
+
 
 class Garantia(models.Model):
     numero_garan=models.AutoField(primary_key=True)
@@ -28,11 +35,17 @@ class Garantia(models.Model):
     fecha_venc=models.DateField()
     estatus=models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.numero_garan
+
 
 class Departamento(models.Model):
     codigo_dpto=models.AutoField(primary_key=True)
     nombre_dpto=models.CharField(max_length=255)
     estatus=models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.nombre_dpto
 
 
 class Ticket(models.Model):
@@ -47,17 +60,26 @@ class Ticket(models.Model):
     cert_garan=models.FileField(upload_to='garantias') #Carpeta donde se guardaran las garantias dentro de media
     estatus=models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.codigo_tick
+
 
 class Modelo(models.Model):
    codigo_mdlo=models.AutoField(primary_key=True)
    descrip_mdlo=models.CharField(max_length=255)
    estatus=models.BooleanField(default=True)
 
+   def __str__(self):
+        return self.descrip_mdlo
+
 
 class Marca(models.Model):
    codigo_mar=models.AutoField(primary_key=True)
    nombre_mar=models.CharField(max_length=255)
    estatus=models.BooleanField(default=True)
+
+   def __str__(self):
+        return self.nombre_mar
 
 
 class Producto(models.Model):
@@ -66,11 +88,14 @@ class Producto(models.Model):
     marca_cod=models.ForeignKey(Marca, null=True, blank=True, on_delete=models.CASCADE)
     nombre_prod=models.CharField(max_length=255)
     descrip_prod=models.CharField(max_length=255)
-    img_prod=models.ImageField(upload_to='productos',null=True, blank=True)#Carpeta para guardar las imagenes de los productos
+    img_prod=models.ImageField(upload_to='productos', null=True, blank=True)#Carpeta para guardar las imagenes de los productos
     existencia=models.IntegerField()
     costo=models.IntegerField()
     meses_garan=models.IntegerField()
     estatus=models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.nombre_prod
 
 
 class Detalle(models.Model):
@@ -79,4 +104,7 @@ class Detalle(models.Model):
     producto_cod=models.ForeignKey(Producto, null=False, blank=False, on_delete=models.CASCADE)
     precio=models.IntegerField()
     cantidad=models.IntegerField()
+
+    def __str__(self):
+        return self.codigo_detal
 
