@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
+from .models import Producto
 
 # Create your views here.
 
@@ -10,7 +11,8 @@ def nosotros(request):
     return render(request, "SistemaGarantia/nosotros.html")
 
 def productos(request):
-    return render(request, "SistemaGarantia/productos.html")
+    productos=Producto.objects.all()
+    return render(request, "SistemaGarantia/productos.html", {"productos":productos})
 
 def contacto(request):
     return render(request, "SistemaGarantia/contacto.html")
