@@ -25,7 +25,7 @@ class Factura(models.Model):
     estatus=models.BooleanField(default=True)
 
     def __str__(self):
-        return self.numero_fact
+        return str(self.numero_fact)
 
 
 class Garantia(models.Model):
@@ -36,7 +36,7 @@ class Garantia(models.Model):
     estatus=models.BooleanField(default=True)
 
     def __str__(self):
-        return self.numero_garan
+        return str(self.numero_garan)
 
 
 class Departamento(models.Model):
@@ -61,7 +61,7 @@ class Ticket(models.Model):
     estatus=models.BooleanField(default=True)
 
     def __str__(self):
-        return self.codigo_tick
+        return str(self.codigo_tick)
 
 
 class Modelo(models.Model):
@@ -106,5 +106,5 @@ class Detalle(models.Model):
     cantidad=models.IntegerField()
 
     def __str__(self):
-        return self.codigo_detal
+        return str(self.codigo_detal)
 
