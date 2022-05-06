@@ -1,0 +1,193 @@
+<html>
+  <head>
+    {% load static %}
+    <title>S&H Home Store</title>
+    <link rel="shortcut icon" href="{% static 'SistemaGarantia/img/favicon.svg' %}" />
+
+    <!-- Bootstrap -->
+    <link
+      href="{% static 'SistemaGarantia/vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <link
+    href="{% static 'SistemaGarantia/vendor/bootstrap-icons/bootstrap-icons.css' %}"
+    rel="stylesheet"
+  />
+
+    <!-- Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link
+      href="{% static 'SistemaGarantia/css/gestion.css' %}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="social-media">
+      <a href="./" class="social-media-icon">
+        <i class="bx bxl-facebook"></i>
+      </a>
+      <a href="./" class="social-media-icon">
+        <i class="bx bxl-twitter"></i>
+      </a>
+      <a href="./" class="social-media-icon">
+        <i class="bx bxl-instagram"></i>
+      </a>
+    </div>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-lower">S&H Home Store </span>
+    </h1>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a
+          class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none"
+          href="{% url 'Home' %}"
+          >S&H Home Store</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item {% if request.path == '/' %} active {% endif %}
+            px-lg-4">
+              <a
+                class="nav-link text-uppercase text-expanded"
+                href="{% url 'Home' %}"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item {% if request.path == '/nosotros' %} active {% endif %} px-lg-4">
+              <a
+                class="nav-link text-uppercase text-expanded"
+                href="{% url 'Nosotros' %}"
+                >Nosotros</a
+              >
+            </li>
+            <li class="nav-item {% if request.path == '/productos' %} active {% endif %} px-lg-4">
+              <a
+                class="nav-link text-uppercase text-expanded"
+                href="{% url 'Productos' %}"
+                >Productos</a
+              >
+            </li>
+            <li class="nav-item {% if request.path == '/contacto' %} active {% endif %} px-lg-4">
+              <a
+                class="nav-link text-uppercase text-expanded"
+                href="{% url 'Contacto' %}"
+                >Contacto</a
+              >
+            </li>
+            <li class="nav-item {% if request.path == '/reclamos' %} active {% endif %} px-lg-4">
+              <a
+                class="nav-link text-uppercase text-expanded"
+                href="{% url 'Reclamos' %}"
+                >Reclamos</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {% block content %} 
+
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0">
+          <a href="#" class="link">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="#" class="link">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a href="#" class="link">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </p>
+        <p class="m-0 mbt">
+          <a href="sample.html" class="link">Política de privacidad</a> ·
+          <a href="sample.html" class="link">Aviso legal</a> ·
+          <a href="sample.html" class="link">Cookies</a>
+        </p>
+        <div class="social-media">
+          <a href="./" class="social-media-icon">
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a href="./" class="social-media-icon">
+            <i class="bx bxl-twitter"></i>
+          </a>
+          <a href="./" class="social-media-icon">
+            <i class="bx bxl-instagram"></i>
+          </a>
+        </div>
+        <p class="m-0 mbt1">
+          &copy; S&H Home Store
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1rem"
+            height="1rem"
+            fill="currentColor"
+            class="bi bi-house-heart-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L8 2.207l6.646 6.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Zm0 5.189c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.691 0-5.018Z"
+            />
+          </svg>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'SistemaGarantia/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'SistemaGarantia/vendor/jquery/validaciones.js' %}"></script>
+
+    <script src="{% static 'SistemaGarantia/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>

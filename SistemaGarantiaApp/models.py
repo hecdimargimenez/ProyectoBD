@@ -55,7 +55,7 @@ class Ticket(models.Model):
     fecha_creac=models.DateTimeField(auto_now_add=True)
     fecha_act=models.DateTimeField(auto_now_add=True)
     tipo_falla=models.CharField(max_length=255)
-    detalle_falla=models.CharField(max_length=255)
+    detalle_falla=models.TextField(max_length=255)
     arch_fact=models.FileField(upload_to='facturas') #Carpeta donde se guardaran las factura dentro de media
     cert_garan=models.FileField(upload_to='garantias') #Carpeta donde se guardaran las garantias dentro de media
     estatus=models.BooleanField(default=True)

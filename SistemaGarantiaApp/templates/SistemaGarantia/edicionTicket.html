@@ -1,0 +1,93 @@
+{% extends "SistemaGarantia/base.html" %}
+
+
+{% load static %}
+
+{% block content %}
+
+<section id="about">
+    <div class="col-md-4 offset-md-4">
+        <h2 class="title" id="titulo" style="text-align: center; margin-bottom: 30px;">
+            Editar Tickets <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+              </svg>
+        </h2>
+        <div class="card" style="background: #398AB9;">
+            <div class="card-body">
+                <form action="/editarTicket/" method="post">
+                  {% csrf_token %}
+                    <div class="form-group">
+                      <label for="txtNombre" >Nombre del cliente</label>
+                      <div>
+                        <input type="text" class="form-control" name="txtNombre" id="txtNombre" value="{{ nombre }}" placeholder="Ingrese nombre" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="txtEmail" >Email</label>
+                      <div>
+                        <input type="email" class="form-control" name="txtEmail" id="txtEmail" value="{{ email }}" placeholder="Ingrese email" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="txtTlf" >Teléfono</label>
+                      <div>
+                        <input type="text" class="form-control" name="txtTlf" id="txtTlf"value="{{ tlf }}"  placeholder="Ingrese teléfono" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="tipoFalla">Tipo de falla</label>
+                      <select class="form-control" name="tipoFalla" id="tipoFalla" value="{{ ticekt.tipo_falla }}">
+                        <option>-Seleccione-</option>
+                        <option>Mal funcionamiento</option>
+                        <option>Detalles y golpes</option>
+                        <option>Sobrecalentamiento</option>
+                        <option>Producto equivocado</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="txtNroF" >Número de Factura</label>
+                      <div>
+                        <input type="text" class="form-control" name="txtNroF" id="txtNroF" value="{{ nroF }}" placeholder="Ingrese número de factura" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="txtNroG" >Número de Garantía</label>
+                      <div>
+                        <input type="text" class="form-control" name="txtNroG" id="txtNroG" value="{{ ticket.garntia_num }}" placeholder="Ingrese número de Garantía" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="txtDetalle">Detalle de la falla</label>
+                      <textarea class="form-control" name="txtDetalle" id="txtDetalle" value="{{ ticket.detalle_falla }}" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="departamento">Departamento</label>
+                      <select class="form-control" name="departamento" id="departamento" value="{{ ticekt.departamento_cod }}">
+                        <option>-Seleccione-</option>
+                        <option>Ventas</option>
+                        <option>Compras</option>
+                        <option>Logística</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="fileF">Adjunte la factura</label>
+                      <input type="file" class="form-control-file" name="fileF" id="fileF" value="{{ ticket.arch_fact }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="fileG">Adjunte la garantía</label>
+                      <input type="file" class="form-control-file" name="fileG" id="fileG" value="{{ ticket.cert_garan }}">
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-success"><svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="currentColor" class="bi bi-send-check" viewBox="0 0 16 16">
+                          <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855a.75.75 0 0 0-.124 1.329l4.995 3.178 1.531 2.406a.5.5 0 0 0 .844-.536L6.637 10.07l7.494-7.494-1.895 4.738a.5.5 0 1 0 .928.372l2.8-7Zm-2.54 1.183L5.93 9.363 1.591 6.602l11.833-4.733Z"/>
+                          <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686Z"/>
+                        </svg> Editar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
