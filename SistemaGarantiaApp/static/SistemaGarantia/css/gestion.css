@@ -386,6 +386,9 @@ ul.errorlist{
   line-height: 24px;
   font-size: 14px;
 }
+thead{
+  text-align: center;
+}
 
 
 /* Services Section

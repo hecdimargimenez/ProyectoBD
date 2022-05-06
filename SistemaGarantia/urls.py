@@ -27,7 +27,12 @@ urlpatterns = [
     path('productos', views.productos, name="Productos"),
     path('contacto', views.contacto, name="Contacto"),
     path('reclamos', views.reclamos, name="Reclamos"),
-    
+    path('incluirTicket/', views.incluirTickets, name="Incluir Tickets"),
+    path('eliminarTicket/<codigo>', views.eliminarTickets, name="Eliminar Tickets"),
+    path('editarTicket/<codigo>', views.editarTickets, name="Editar Tickets"),
+    #path('edicionTickets/', views.edicionTickets, name="Edicion Tickets"),
+
+
 
 ]
 

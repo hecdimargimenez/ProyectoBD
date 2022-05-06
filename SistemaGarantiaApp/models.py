@@ -25,7 +25,7 @@ class Factura(models.Model):
     estatus=models.BooleanField(default=True)
 
     def __str__(self):
-        return self.numero_fact
+        return str(self.numero_fact)
 
 
 class Garantia(models.Model):
@@ -36,7 +36,7 @@ class Garantia(models.Model):
     estatus=models.BooleanField(default=True)
 
     def __str__(self):
-        return self.numero_garan
+        return str(self.numero_garan)
 
 
 class Departamento(models.Model):
@@ -55,13 +55,13 @@ class Ticket(models.Model):
     fecha_creac=models.DateTimeField(auto_now_add=True)
     fecha_act=models.DateTimeField(auto_now_add=True)
     tipo_falla=models.CharField(max_length=255)
-    detalle_falla=models.CharField(max_length=255)
+    detalle_falla=models.TextField(max_length=255)
     arch_fact=models.FileField(upload_to='facturas') #Carpeta donde se guardaran las factura dentro de media
     cert_garan=models.FileField(upload_to='garantias') #Carpeta donde se guardaran las garantias dentro de media
     estatus=models.BooleanField(default=True)
 
     def __str__(self):
-        return self.codigo_tick
+        return str(self.codigo_tick)
 
 
 class Modelo(models.Model):
@@ -106,5 +106,5 @@ class Detalle(models.Model):
     cantidad=models.IntegerField()
 
     def __str__(self):
-        return self.codigo_detal
+        return str(self.codigo_detal)
 
