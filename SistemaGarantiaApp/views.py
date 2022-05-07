@@ -105,7 +105,7 @@ def buscarTicket(request):
         return render(request, "SistemaGarantia/busqueda.html", {"tickets":tickets, "query":tick})
 
     else:
-        mensaje="No has introducido nada"
+        mensaje="No has introducido el código del Ticket"
 
     return HttpResponse(mensaje)
    
