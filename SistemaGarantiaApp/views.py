@@ -94,3 +94,18 @@ def editarTickets(request, codigo):
     ticket.save()
     return redirect('/reclamos') """
     
+
+def buscarTicket(request):
+
+    if request.GET["txtBuscar"]:
+         
+        tick=request.GET["txtBuscar"]
+        tickets=Ticket.objects.filter(codigo_tick__icontains=tick)
+       
+        return render(request, "SistemaGarantia/busqueda.html", {"tickets":tickets, "query":tick})
+
+    else:
+        mensaje="No has introducido nada"
+
+    return HttpResponse(mensaje)
+   

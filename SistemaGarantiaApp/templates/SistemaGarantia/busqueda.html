@@ -1,0 +1,50 @@
+{% extends "SistemaGarantia/base.html" %}
+
+{% block content %}
+
+<html>
+<body>
+
+{% if tickets%}
+    <div class="table-responsive">
+        <table class="table table-sm">
+            <thead style="background: #398AB9;">
+                <tr>
+                  <th>Ticket#</th>
+                  <th>Creado</th>
+                  <th>Actualizado</th>
+                  <th>Estado</th>
+                  <th>Tipo de Falla</th>
+                  <th>Departamento</th>
+                  <th colspan="2">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                  {% for ticket in tickets %}
+                <Tr>
+                   <td>{{ticket.codigo_tick}}</td>
+                   <td>{{ticket.fecha_creac}}</td>
+                   <td>{{ticket.fecha_act}}</td>
+                   <td>{{ticket.estatus}}</td>
+                   <td>{{ticket.tipo_falla}}</td>
+                   <td>{{ticket.departamento_cod}}</td>
+                   <td><a href="editarTicket/{{ticket.codigo_tick}}" class="btn btn-info">Editar</a></td>
+                   <td><a href="eliminarTicket/{{ticket.codigo_tick}}" class="btn btn-danger btnEliminar">Eliminar</a></td>
+
+                </Tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% else %}
+   
+   <p>No existe el Ticket</p>
+
+{% endif %}
+</body>
+</html>
+
+{% load static %}
+
+{% endblock %}

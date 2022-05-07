@@ -30,6 +30,7 @@ urlpatterns = [
     path('incluirTicket/', views.incluirTickets, name="Incluir Tickets"),
     path('eliminarTicket/<codigo>', views.eliminarTickets, name="Eliminar Tickets"),
     path('editarTicket/<codigo>', views.editarTickets, name="Editar Tickets"),
+    path('busqueda/', views.buscarTicket, name="Incluir Tickets"),
     #path('edicionTickets/', views.edicionTickets, name="Edicion Tickets"),
 
 
